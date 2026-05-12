@@ -1,0 +1,53 @@
+# 🎮 Keno-Style Weighted Number Generator (1–80)
+
+A web-based interactive Keno-style number generator where users select preferred numbers and influence probability outcomes using a custom weighted system.
+
+---
+
+## 🎯 Features
+- Interactive 1–80 selectable grid
+- Choose up to 20 preferred numbers
+- Weighted probability generator system
+- Instant game-style result display
+- Reset and replay functionality
+- Mobile-friendly UI (game-like experience)
+
+---
+
+## ⚙️ How It Works
+The system assigns higher probability weight to selected numbers while maintaining randomness across the full 1–80 pool.
+
+This creates a controlled simulation similar to Keno-style number games.
+
+> Note: This is a simulation tool and does not predict real-world outcomes.
+
+---
+
+## 💻 Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+---
+
+## 🚀 How to Use
+1. Open the website (index.html)
+2. Select up to 20 numbers from the grid
+3. Click “Generate Result”
+4. View weighted outcome instantly
+5. Reset and try again
+
+---
+
+## 📌 Purpose
+This project demonstrates weighted probability systems, interactive UI design, and game-style logic for simulation-based web applications.
+
+---
+
+## ⚠️ Disclaimer
+This project is for educational and simulation purposes only. It does not guarantee or predict real-world results.
+
+---
+
+## 👨‍💻 Author
+Built as a personal development project.
