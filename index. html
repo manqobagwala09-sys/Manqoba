@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weighted Number Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Weighted Number Generator (1–80)</h1>
+
+<p>Select up to 20 numbers:</p>
+
+<div id="grid"></div>
+
+<button onclick="generateResult()">Generate Result</button>
+<button onclick="resetSelection()">Reset</button>
+
+<h2>Result:</h2>
+<div id="result">None yet</div>
+
+<script src="script.js"></script>
+</body>
+</html>
