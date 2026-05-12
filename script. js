@@ -1,0 +1,63 @@
+let selected = [];
+
+// create 1–80 grid
+const grid = document.getElementById("grid");
+
+for (let i = 1; i <= 80; i++) {
+    let div = document.createElement("div");
+    div.classList.add("number");
+    div.innerText = i;
+
+    div.onclick = () => toggleNumber(i, div);
+
+    grid.appendChild(div);
+}
+
+function toggleNumber(num, element) {
+    if (selected.includes(num)) {
+        selected = selected.filter(n => n !== num);
+        element.classList.remove("selected");
+    } else {
+        if (selected.length >= 20) {
+            alert("You can only select 20 numbers");
+            return;
+        }
+        selected.push(num);
+        element.classList.add("selected");
+    }
+}
+
+function generateResult() {
+    if (selected.length !== 20) {
+        alert("Please select exactly 20 numbers");
+        return;
+    }
+
+    let pool = [];
+
+    // weighted: selected numbers appear more
+    selected.forEach(n => {
+        for (let i = 0; i < 6; i++) {
+            pool.push(n);
+        }
+    });
+
+    // remaining numbers lower weight
+    for (let i = 1; i <= 80; i++) {
+        if (!selected.includes(i)) {
+            pool.push(i);
+        }
+    }
+
+    let result = pool[Math.floor(Math.random() * pool.length)];
+
+    document.getElementById("result").innerText = result;
+}
+
+function resetSelection() {
+    selected = [];
+    document.querySelectorAll(".number").forEach(el => {
+        el.classList.remove("selected");
+    });
+    document.getElementById("result").innerText = "None yet";
+}
