@@ -1,40 +1,87 @@
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    background: #0f172a;
+    background: radial-gradient(circle, #0f172a, #020617);
     color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
 }
 
 h1 {
-    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    opacity: 0.7;
+    margin-bottom: 20px;
 }
 
 #grid {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    gap: 8px;
-    max-width: 500px;
-    margin: 20px auto;
+    gap: 10px;
+    max-width: 600px;
+    margin: auto;
 }
 
 .number {
-    padding: 10px;
     background: #1e293b;
-    border-radius: 6px;
+    padding: 12px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 0.2s;
     user-select: none;
+    font-weight: bold;
+}
+
+.number:hover {
+    transform: scale(1.1);
+    background: #334155;
 }
 
 .number.selected {
     background: #22c55e;
     color: black;
-    font-weight: bold;
+    box-shadow: 0 0 15px #22c55e;
+    transform: scale(1.1);
+}
+
+.controls {
+    margin: 20px;
 }
 
 button {
-    margin: 10px;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    margin: 5px;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 6px;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.panel {
+    margin-top: 20px;
+    padding: 15px;
+    background: #0b1220;
+    border-radius: 12px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#result {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #facc15;
 }
