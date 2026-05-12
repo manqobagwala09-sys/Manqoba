@@ -1,32 +1,33 @@
 let selected = [];
 
-// create 1–80 grid
 const grid = document.getElementById("grid");
 
+// create 1–80 grid
 for (let i = 1; i <= 80; i++) {
     let div = document.createElement("div");
     div.classList.add("number");
     div.innerText = i;
 
-    div.onclick = () => toggleNumber(i, div);
+    div.onclick = () => toggle(i, div);
 
     grid.appendChild(div);
 }
 
-function toggleNumber(num, element) {
+function toggle(num, el) {
     if (selected.includes(num)) {
         selected = selected.filter(n => n !== num);
-        element.classList.remove("selected");
+        el.classList.remove("selected");
     } else {
         if (selected.length >= 20) {
-            alert("You can only select 20 numbers");
+            alert("Max 20 numbers allowed");
             return;
         }
         selected.push(num);
-        element.classList.add("selected");
+        el.classList.add("selected");
     }
 }
 
+// weighted generator
 function generateResult() {
     if (selected.length !== 20) {
         alert("Please select exactly 20 numbers");
@@ -35,14 +36,14 @@ function generateResult() {
 
     let pool = [];
 
-    // weighted: selected numbers appear more
+    // high weight
     selected.forEach(n => {
         for (let i = 0; i < 6; i++) {
             pool.push(n);
         }
     });
 
-    // remaining numbers lower weight
+    // low weight others
     for (let i = 1; i <= 80; i++) {
         if (!selected.includes(i)) {
             pool.push(i);
@@ -54,10 +55,11 @@ function generateResult() {
     document.getElementById("result").innerText = result;
 }
 
-function resetSelection() {
+// reset system
+function resetAll() {
     selected = [];
     document.querySelectorAll(".number").forEach(el => {
         el.classList.remove("selected");
     });
-    document.getElementById("result").innerText = "None yet";
+    document.getElementById("result").innerText = "Waiting...";
 }
