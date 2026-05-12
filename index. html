@@ -3,23 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weighted Number Generator</title>
+<title>Keno Style Generator</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Weighted Number Generator (1–80)</h1>
+<div class="container">
 
-<p>Select up to 20 numbers:</p>
+<h1>🎮 Keno Weighted Generator</h1>
+
+<p class="subtitle">Select up to 20 numbers (1–80)</p>
 
 <div id="grid"></div>
 
-<button onclick="generateResult()">Generate Result</button>
-<button onclick="resetSelection()">Reset</button>
+<div class="controls">
+    <button onclick="generateResult()">Generate Draw</button>
+    <button onclick="resetAll()">Reset</button>
+</div>
 
-<h2>Result:</h2>
-<div id="result">None yet</div>
+<div class="panel">
+    <h2>Result</h2>
+    <div id="result">Waiting...</div>
+</div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
