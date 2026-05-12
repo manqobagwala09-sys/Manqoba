@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #0f172a;
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.number {
+    padding: 10px;
+    background: #1e293b;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.number.selected {
+    background: #22c55e;
+    color: black;
+    font-weight: bold;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
